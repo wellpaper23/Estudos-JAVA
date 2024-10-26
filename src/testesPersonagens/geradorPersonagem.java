@@ -1,5 +1,6 @@
-import java.util.Scanner;
+package testesPersonagens;
 
+import java.util.Scanner;
 public class geradorPersonagem {
     public static void main(String[] args) {
         //gerador de Protagonista
