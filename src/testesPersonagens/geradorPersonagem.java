@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Main {
+public class geradorPersonagem {
     public static void main(String[] args) {
         //gerador de Protagonista
         Scanner scanner = new Scanner(System.in);
