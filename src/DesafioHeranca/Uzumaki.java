@@ -1,14 +1,11 @@
 package DesafioHeranca;
 
-public class Uchiha extends Ninja {
-    String ClaDoNinja = "Uchiha";
-    String habilidadeEspecial;
-    public void mostrarHabilidadeEspecial() {
-        System.out.println("Habilidade Especial: " + habilidadeEspecial);
+public class Uzumaki extends Ninja {
+    String ClaDoNinja = "Uzumaki";
 
-    }
 
-    public void mostrarInformacoes() {
+
+    /*public void mostrarInformacoes() {
 
         System.out.println("nome = " + nome[numeroDoNinja]);
         System.out.println("Clã: " + ClaDoNinja);
@@ -18,5 +15,5 @@ public class Uchiha extends Ninja {
         System.out.println("Status da Missao = " + statusDaMissao[numeroDoNinja]);
         mostrarHabilidadeEspecial();
     }
-
+*/
 }
