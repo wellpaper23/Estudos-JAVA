@@ -1,23 +1,32 @@
 package DesafioHeranca;
 
 public class Uchiha extends Ninja {
-    int contagemUchiha;
-    String ClaDoNinja = "Uchiha";
-    String habilidadeEspecial;
-    public void mostrarHabilidadeEspecial() {
+    static String ClaDoNinja = "Uchiha";
+    static int contagemUchiha;
+    static String habilidadeEspecial;
+    public static void mostrarHabilidadeEspecial() {
         System.out.println("Habilidade Especial: " + habilidadeEspecial);
-
     }
+    public static void mostrarInformacoesTodosOsNinjas() {
+        if (contagem <= 0) {
+            System.out.println("Não há Ninjas para serem Exibidos.");
 
-    public void mostrarInformacoes() {
+        }else if(contagemUchiha > 0){
+            for (int i = 0; i < contagemUchiha; i++) {
 
-        System.out.println("nome = " + nome[numeroDoNinja]);
-        System.out.println("Clã: " + ClaDoNinja);
-        System.out.println("idade = " + idade[numeroDoNinja]);
-        System.out.println("Missao = " + missao[numeroDoNinja]);
-        System.out.println("Nivel de dificuldade = " + nivelDeDificuldade[numeroDoNinja]);
-        System.out.println("Status da Missao = " + statusDaMissao[numeroDoNinja]);
-        mostrarHabilidadeEspecial();
+                System.out.println("Nome = " + nome[i]);
+                System.out.println("Clã: " + ClaDoNinja);
+                System.out.println("idade = " + idade[i]);
+                System.out.println("Missao = " + missao[i]);
+                System.out.println("Nivel de dificuldade = " + nivelDeDificuldade[i]);
+                System.out.println("Status da Missao = " + statusDaMissao[i]);
+                mostrarHabilidadeEspecial();
+                if (i == contagemUchiha-1) {
+                    Uzumaki.mostrarInformacoesTodosOsNinjas();
+                }
+            }
+        }
     }
-
 }
+
+

@@ -3,86 +3,88 @@ package DesafioHeranca;
 import java.util.Scanner;
 
 public class Ninja{
+    Scanner scan = new Scanner(System.in);
+//variaveis de controle
+    static int contagem;
+    static int maximoDeNinjas = 3;
+    static int numeroDoNinja;
+
+//array de dados dos ninjas
+static String[] nome = new String[maximoDeNinjas];
+    static int[] idade = new int[maximoDeNinjas];
+    static String[] missao = new String[maximoDeNinjas];
+    static String[] nivelDeDificuldade = new String[maximoDeNinjas];
+    static String[] statusDaMissao = new String[maximoDeNinjas];
 
 
-    int contagem;
-    int maximoDeNinjas = 3;
-    int numeroDoNinja;
-
-    String[] nome = new String[maximoDeNinjas];
-    int[] idade = new int[maximoDeNinjas];
-    String[] missao = new String[maximoDeNinjas];
-    String[] nivelDeDificuldade = new String[maximoDeNinjas];
-    String[] statusDaMissao = new String[maximoDeNinjas];
+    public static void mostrarInformacoesTodosOsNinjas() {
+        Uchiha.mostrarInformacoesTodosOsNinjas();
 
 
-    public void mostrarInformacoes() {
 
-        System.out.println("nome = " + nome[numeroDoNinja]);
-        System.out.println("idade = " + idade[numeroDoNinja]);
-        System.out.println("Nivel de dificuldade = " + nivelDeDificuldade[numeroDoNinja]);
-        System.out.println("Status da Missao = " + statusDaMissao[numeroDoNinja]);
-        System.out.println("Missao = " + missao[numeroDoNinja]);
     }
-    public  void RegistrarNinja() {
-        Scanner scanNinja = new Scanner(System.in);
+    public void RegistrarNinja() {
+
         ListarClas();
-        System.out.println("Escolha um Clã para o seu Ninja: ");
-        int option = scanNinja.nextInt();
-        switch (option){
-            case 1:
-                System.out.println("==== Registre seu Ninja Uchiha ====");
-                System.out.print("Nome:");
-                ClaUchiha.nome[ClaUchiha.contagemUchiha] = scanNinja.nextLine();
-                scanNinja.nextLine();
-                System.out.print("Idade: ");
-                ClaUchiha.idade[ClaUchiha.contagemUchiha] = scanNinja.nextInt();
-                scanNinja.nextLine();
-                System.out.print("Missão: ");
-                ClaUchiha.missao[ClaUchiha.contagemUchiha] = scanNinja.nextLine();
-                System.out.print("Dificuldade: ");
-                ClaUchiha.nivelDeDificuldade[ClaUchiha.contagemUchiha] = scanNinja.nextLine();
-                System.out.print("Status: ");
-                ClaUchiha.statusDaMissao[ClaUchiha.contagemUchiha] = scanNinja.nextLine();
-                ClaUchiha.contagemUchiha++;
-                contagem ++;
-                break;
-            case 2:
-                System.out.println("==== Registre seu Ninja Uzumaki ====");
-                System.out.print("Nome:");
-                ClaUzumaki.nome[ClaUzumaki.contagemUzumaki] = scanNinja.nextLine();
-                System.out.print("Idade: ");
-                ClaUzumaki.idade[ClaUzumaki.contagemUzumaki] = scanNinja.nextInt();
-                scanNinja.nextLine();
-                System.out.print("Missão: ");
-                ClaUzumaki.missao[ClaUzumaki.contagemUzumaki] = scanNinja.nextLine();
-                System.out.print("Dificuldade: ");
-                ClaUzumaki.nivelDeDificuldade[ClaUzumaki.contagemUzumaki] = scanNinja.nextLine();
-                System.out.print("Status: ");
-                ClaUchiha.statusDaMissao[ClaUzumaki.contagemUzumaki] = scanNinja.nextLine();
-                ClaUzumaki.contagemUzumaki++;
-                contagem ++;
-                break;
-            default:
-                System.out.println("Opção Inválida, escolha um Clã da Lista!");
-                RegistrarNinja();
-            break;
+        if (contagem==maximoDeNinjas) {
+            System.out.println("Limite de Ninjas atingido, escolha outra opção");
+
+        }else {
+            System.out.println("Escolha um Clã para o seu Ninja: ");
+            int option = scan.nextInt();
+            switch (option) {
+                case 1:
+                    System.out.println("==== Registre seu Ninja Uchiha ====");
+                    scan.nextLine();
+                    System.out.print("Nome:");
+                    Uchiha.nome[Uchiha.contagemUchiha] = scan.nextLine();
+                    System.out.print("Idade: ");
+                    Uchiha.idade[Uchiha.contagemUchiha] = scan.nextInt();
+                    scan.nextLine();
+                    System.out.print("Missão: ");
+                    Uchiha.missao[Uchiha.contagemUchiha] = scan.nextLine();
+                    System.out.print("Dificuldade: ");
+                    Uchiha.nivelDeDificuldade[Uchiha.contagemUchiha] = scan.nextLine();
+                    System.out.print("Status: ");
+                    Uchiha.statusDaMissao[Uchiha.contagemUchiha] = scan.nextLine();
+                    Uchiha.contagemUchiha++;
+                    contagem = contagem + 1;
+
+                    break;
+                case 2:
+                    System.out.println("==== Registre seu Ninja Uzumaki ====");
+                    scan.nextLine();
+                    System.out.print("Nome:");
+                    Uzumaki.nome[Uzumaki.contagemUzumaki] = scan.nextLine();
+                    System.out.print("Idade: ");
+                    Uzumaki.idade[Uzumaki.contagemUzumaki] = scan.nextInt();
+                    scan.nextLine();
+                    System.out.print("Missão: ");
+                    Uzumaki.missao[Uzumaki.contagemUzumaki] = scan.nextLine();
+                    System.out.print("Dificuldade: ");
+                    Uzumaki.nivelDeDificuldade[Uzumaki.contagemUzumaki] = scan.nextLine();
+                    System.out.print("Status: ");
+                    Uzumaki.statusDaMissao[Uzumaki.contagemUzumaki] = scan.nextLine();
+                    Uzumaki.contagemUzumaki++;
+                    contagem++;
+
+                    break;
+                default:
+                    System.out.println("Opção Inválida, escolha um Clã da Lista!");
+                    RegistrarNinja();
+                    break;
+            }
         }
-            scanNinja.close();
     }
 
 
-
-    static Uchiha ClaUchiha = new Uchiha();
-    static Uzumaki ClaUzumaki = new Uzumaki();
-    public static void ListarClas(){
-
+    public void ListarClas(){
         String[] clas = new String[2];
-        clas[0] = ClaUchiha.ClaDoNinja;
-        clas[1] = ClaUzumaki.ClaDoNinja;
+        clas[0] = Uchiha.ClaDoNinja;
+        clas[1] = Uzumaki.ClaDoNinja;
         System.out.println("=== Lista de Clãs ===");
         for (int i = 0; i < 2;i++){
-            System.out.println(i +"-"+clas[i]);
+            System.out.println(i+1 +"-"+clas[i]);
         }
 
     }
