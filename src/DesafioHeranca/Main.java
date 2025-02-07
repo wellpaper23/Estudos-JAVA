@@ -9,7 +9,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Ninja.ListarClas();
+        Ninja informacoes = new Ninja();
+        informacoes.RegistrarNinja();
     }
     public void Menu(){
 

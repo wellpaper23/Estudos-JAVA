@@ -1,6 +1,7 @@
 package DesafioHeranca;
 
 public class Uchiha extends Ninja {
+    int contagemUchiha;
     String ClaDoNinja = "Uchiha";
     String habilidadeEspecial;
     public void mostrarHabilidadeEspecial() {

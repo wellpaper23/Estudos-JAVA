@@ -2,7 +2,7 @@ package DesafioHeranca;
 
 public class Uzumaki extends Ninja {
     String ClaDoNinja = "Uzumaki";
-
+    int contagemUzumaki;
 
 
     /*public void mostrarInformacoes() {
