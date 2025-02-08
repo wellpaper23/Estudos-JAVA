@@ -1,14 +1,11 @@
 package DesafioHeranca;
 
 public class Uzumaki extends Ninja {
-    static String ClaDoNinja = "Uzumaki";
-    static int contagemUzumaki;
+    String ClaDoNinja = "Uzumaki";
 
-    public static void mostrarInformacoesTodosOsNinjas() {
-        if (contagem <= 0) {
-            System.out.println("Não há Ninjas para serem Exibidos.");
-        } else if (contagemUzumaki > 0) {
-            for (int i = 0; i < contagemUzumaki; i++) {
+    public void mostrarInformacoesTodosOsNinjas() {
+
+        for (int i = 0; i < ClaUzumaki.contagem; i++) {
 
                 System.out.println("nome = " + nome[i]);
                 System.out.println("Clã: " + ClaDoNinja);
@@ -17,7 +14,7 @@ public class Uzumaki extends Ninja {
                 System.out.println("Nivel de dificuldade = " + nivelDeDificuldade[i]);
                 System.out.println("Status da Missao = " + statusDaMissao[i]);
             }
-        }
-        numeroDoNinja=0;
+
+
     }
 }

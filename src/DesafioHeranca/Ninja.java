@@ -3,23 +3,34 @@ package DesafioHeranca;
 import java.util.Scanner;
 
 public class Ninja{
+    Uzumaki ClaUzumaki;
+    Uchiha ClaUchiha;
     Scanner scan = new Scanner(System.in);
 //variaveis de controle
-    static int contagem;
+int contagem;
     static int maximoDeNinjas = 3;
-    static int numeroDoNinja;
+    //static int numeroDoNinja;
 
 //array de dados dos ninjas
-static String[] nome = new String[maximoDeNinjas];
-    static int[] idade = new int[maximoDeNinjas];
-    static String[] missao = new String[maximoDeNinjas];
-    static String[] nivelDeDificuldade = new String[maximoDeNinjas];
-    static String[] statusDaMissao = new String[maximoDeNinjas];
+    String[] nome = new String[maximoDeNinjas];
+    int[] idade = new int[maximoDeNinjas];
+    String[] missao = new String[maximoDeNinjas];
+    String[] nivelDeDificuldade = new String[maximoDeNinjas];
+    String[] statusDaMissao = new String[maximoDeNinjas];
 
 
-    public static void mostrarInformacoesTodosOsNinjas() {
-        Uchiha.mostrarInformacoesTodosOsNinjas();
+    public void mostrarInformacoesTodosOsNinjas() {
+        try {
+            if (ClaUzumaki.contagem > 0) {
+                ClaUzumaki.mostrarInformacoesTodosOsNinjas();
+            }
 
+            if (ClaUchiha.contagem < 0) {
+                ClaUchiha.mostrarInformacoesTodosOsNinjas();
+            }
+        }catch (NullPointerException exception){
+ClaUchiha.mostrarInformacoesTodosOsNinjas();
+        }
 
 
     }
@@ -37,17 +48,17 @@ static String[] nome = new String[maximoDeNinjas];
                     System.out.println("==== Registre seu Ninja Uchiha ====");
                     scan.nextLine();
                     System.out.print("Nome:");
-                    Uchiha.nome[Uchiha.contagemUchiha] = scan.nextLine();
+                    ClaUchiha.nome[ClaUchiha.contagem] = scan.nextLine();
                     System.out.print("Idade: ");
-                    Uchiha.idade[Uchiha.contagemUchiha] = scan.nextInt();
+                    ClaUchiha.idade[ClaUchiha.contagem] = scan.nextInt();
                     scan.nextLine();
                     System.out.print("Missão: ");
-                    Uchiha.missao[Uchiha.contagemUchiha] = scan.nextLine();
+                    ClaUchiha.missao[ClaUchiha.contagem] = scan.nextLine();
                     System.out.print("Dificuldade: ");
-                    Uchiha.nivelDeDificuldade[Uchiha.contagemUchiha] = scan.nextLine();
+                    ClaUchiha.nivelDeDificuldade[ClaUchiha.contagem] = scan.nextLine();
                     System.out.print("Status: ");
-                    Uchiha.statusDaMissao[Uchiha.contagemUchiha] = scan.nextLine();
-                    Uchiha.contagemUchiha++;
+                    ClaUchiha.statusDaMissao[ClaUchiha.contagem] = scan.nextLine();
+                    ClaUchiha.contagem++;
                     contagem = contagem + 1;
 
                     break;
@@ -55,17 +66,17 @@ static String[] nome = new String[maximoDeNinjas];
                     System.out.println("==== Registre seu Ninja Uzumaki ====");
                     scan.nextLine();
                     System.out.print("Nome:");
-                    Uzumaki.nome[Uzumaki.contagemUzumaki] = scan.nextLine();
+                    ClaUzumaki.nome[ClaUzumaki.contagem] = scan.nextLine();
                     System.out.print("Idade: ");
-                    Uzumaki.idade[Uzumaki.contagemUzumaki] = scan.nextInt();
+                    ClaUzumaki.idade[ClaUzumaki.contagem] = scan.nextInt();
                     scan.nextLine();
                     System.out.print("Missão: ");
-                    Uzumaki.missao[Uzumaki.contagemUzumaki] = scan.nextLine();
+                    ClaUzumaki.missao[ClaUzumaki.contagem] = scan.nextLine();
                     System.out.print("Dificuldade: ");
-                    Uzumaki.nivelDeDificuldade[Uzumaki.contagemUzumaki] = scan.nextLine();
+                    ClaUzumaki.nivelDeDificuldade[ClaUzumaki.contagem] = scan.nextLine();
                     System.out.print("Status: ");
-                    Uzumaki.statusDaMissao[Uzumaki.contagemUzumaki] = scan.nextLine();
-                    Uzumaki.contagemUzumaki++;
+                    ClaUzumaki.statusDaMissao[ClaUzumaki.contagem] = scan.nextLine();
+                    ClaUzumaki.contagem++;
                     contagem++;
 
                     break;
@@ -80,8 +91,8 @@ static String[] nome = new String[maximoDeNinjas];
 
     public void ListarClas(){
         String[] clas = new String[2];
-        clas[0] = Uchiha.ClaDoNinja;
-        clas[1] = Uzumaki.ClaDoNinja;
+        clas[0] = ClaUchiha.ClaDoNinja;
+        clas[1] = ClaUzumaki.ClaDoNinja;
         System.out.println("=== Lista de Clãs ===");
         for (int i = 0; i < 2;i++){
             System.out.println(i+1 +"-"+clas[i]);

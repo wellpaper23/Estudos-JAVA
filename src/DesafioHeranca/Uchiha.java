@@ -1,18 +1,15 @@
 package DesafioHeranca;
 
 public class Uchiha extends Ninja {
-    static String ClaDoNinja = "Uchiha";
-    static int contagemUchiha;
-    static String habilidadeEspecial;
-    public static void mostrarHabilidadeEspecial() {
+    String ClaDoNinja = "Uchiha";
+
+    String habilidadeEspecial;
+    public void mostrarHabilidadeEspecial() {
         System.out.println("Habilidade Especial: " + habilidadeEspecial);
     }
-    public static void mostrarInformacoesTodosOsNinjas() {
-        if (contagem <= 0) {
-            System.out.println("Não há Ninjas para serem Exibidos.");
+    public void mostrarInformacoesTodosOsNinjas() {
 
-        }else if(contagemUchiha > 0){
-            for (int i = 0; i < contagemUchiha; i++) {
+            for (int i = 0; i < ClaUchiha.contagem; i++) {
 
                 System.out.println("Nome = " + nome[i]);
                 System.out.println("Clã: " + ClaDoNinja);
@@ -21,10 +18,6 @@ public class Uchiha extends Ninja {
                 System.out.println("Nivel de dificuldade = " + nivelDeDificuldade[i]);
                 System.out.println("Status da Missao = " + statusDaMissao[i]);
                 mostrarHabilidadeEspecial();
-                if (i == contagemUchiha-1) {
-                    Uzumaki.mostrarInformacoesTodosOsNinjas();
-                }
-            }
         }
     }
 }

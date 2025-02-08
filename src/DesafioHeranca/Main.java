@@ -8,6 +8,8 @@ public class Main {
     static Ninja informacoes = new Ninja();
 
     public static void main(String[] args) {
+informacoes.ClaUzumaki = new Uzumaki();
+informacoes.ClaUchiha = new Uchiha();
 
 
         Menu();
@@ -30,7 +32,7 @@ public class Main {
 
                     break;
                 case 2:
-                    Ninja.mostrarInformacoesTodosOsNinjas();
+                    informacoes.mostrarInformacoesTodosOsNinjas();
                     break;
 
                 case 5:
