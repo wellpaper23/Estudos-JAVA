@@ -6,7 +6,7 @@ public class Ninja {
 
     Scanner scan = new Scanner(System.in);
     static int contagem;
-    static int maximoDeNinjas = 5;
+    static int maximoDeNinjas = 2;
 
     static String[] Nome = new String[maximoDeNinjas];
     static int[] Idade = new int[maximoDeNinjas];
@@ -124,6 +124,7 @@ public class Ninja {
                 }
 
         }
+
     }
 //================================================================================================
     public void mostrarInformacoes(){
@@ -184,5 +185,6 @@ public class Ninja {
         }
         System.out.println("======================");
     }
+
 
 }
